@@ -3,7 +3,24 @@
     <head>
 
 <script>
-    alert("Hello!")
+    // alert("Hello!")
+    let a = 10
+    var b = 10
+    c = 10
+    const d = 10
+    // Note: Choose the right variable types to ensure that other programmers/designers know that the variable assigned is protected for a reason.
+    var e1 = "10"
+    var e2 = parseInt("10")
+    var e3 = parseInt("Ten")
+
+    console.log(a);
+    console.log(a + b);
+    // Across variable types it treats variables as strings.
+    console.log(a + e1);
+    // parseInt("") will convert strings to integers if it is possible to do so.
+    console.log(a + e2); //Example of it working properly.
+    console.log(a + e3); //Example of where it cannot parse.
+
 </script>
 
     </head>
