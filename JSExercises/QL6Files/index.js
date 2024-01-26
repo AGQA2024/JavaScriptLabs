@@ -12,4 +12,4 @@ const movies = [
 
 // Part 1 - Create a function to find a movie and output it's detail
 
-// Part 2 = Create a function to return a movie object
+// Part 2 = Create a function to return a movie object 
