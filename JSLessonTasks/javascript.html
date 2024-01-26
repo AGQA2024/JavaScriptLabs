@@ -55,6 +55,48 @@
     console.log("Selection:" + message.substring(3,10))
     console.log("Length:" + message.length)
     console.log("Selection:" + message.substring(3,message.length/2))
+
+    //---------------------------------------------------------
+
+    // Operations
+
+    console.log("****OPERATIONS****")
+
+    console.log("+ : " + (10 + 10))
+    console.log("- : " + (10 - 10))
+    console.log("* : " + (10 * 10))
+    console.log("/ : " + (10 / 10))
+
+    // Note: Be wary of BODMAS operations, the computer might not apply them intuatively. Brackets () can help us guard against this.
+
+    console.log("10 + 20 *2 = " + (10 + 20*2))
+    console.log("(10 + 20) *2 = " + ((10 + 20)*2))
+
+    //---------------------------------------------------------
+
+    // Booleans
+
+    console.log("****BOOLEANS****")
+
+    // console.log(true)
+    // console.log(false)
+
+    // console.log("5 < 6 :" + (5 < 6))
+    // console.log("5 > 6 :" + (5 > 6))
+
+    // // QUESTION:
+    // let x = 5 // !=4;
+
+    // console.log(x)
+    // console.log("x < 4 : " + (x < 4))
+
+    let x = 5 > 4;
+    let y = 100 > 50;
+
+    console.log(true && false) // Both must be true to give false. 
+    console.log(true || false) // With OR only one argument needs to be true.
+    console.log(false|| false) // This is the only combination that gives false as an output.
+
 </script>
 
     </head>
