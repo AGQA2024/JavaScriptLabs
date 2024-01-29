@@ -8,11 +8,80 @@
 
     <body>
 
-        <h1>Hello!</h1>
+        <h1 id = "title">Hello!</h1>
+        <h1 class = "highlight">ABC</h1>
 
+        <ul id = "menu">
+            <li>Item</li>
+            <li>Item</li>
+            <li class = "highlight">Item 3</li>
+            <li data="123">Item</li>
+            <li data="456">Item</li>
+            <li data="789">Item</li>
+        </ul>
+
+        <p class = "highlight"></p>
+
+        <input value="a"/>
+        <input value="b"/>
+        <input value="c"/>
 <script>
-    let node = document.querySelector('h1'); // node is a reference name
-    console.log(node);
+    
+    // let node1 = document.querySelector('h1'); // node is a reference name
+    // console.log(node1);
+
+    // // let node2 = document.querySelectorAll('highlight');
+    // // console.log(node2);
+
+    // let node3 = document.querySelectorAll('#menu');
+    // console.log(node3);
+    
+    // let node4 = document.getElementById('menu');
+    // console.log(node4);
+
+        
+    // let node5 = document.getElementById('title');
+    // console.log(node5.innerHTML);
+
+    // node5.innerHTML = node5.innerHTML + "Addition";
+    // node5.innerHTML = node5.innerHTML + "<span style='color:red'>***</span>";
+
+
+    // let node6 = document.body;
+    // console.log("Node6 = " + node6)
+
+    // console.log("Node6.innerText = " + node6.innerText)
+
+    // let nodeList = document.querySelectorAll('.highlight');
+    // console.log(nodeList);
+
+    // for(let node of nodeList){
+    //     node.innerHTML = node.innerHTML + "<span style='color:red'>***</span>";
+    // }
+    
+    let nodeList = document.querySelectorAll('[value]');
+    //let nodeList = document.querySelectorAll('[data]');
+    console.log(nodeList);
+
+    
+
+    for(let node of nodeList){
+        // node.innerHTML = node.innerHTML + "<span style='color:red'>***</span>";
+        //console.log(node.getAttribute("data"))
+        console.log(node.getAttribute("value"))
+    }
+    
+
+    function test(){
+        for(let node of nodeList){
+            // node.innerHTML = node.innerHTML + "<span style='color:red'>***</span>";
+            //console.log(node.getAttribute("data"))
+            console.log(node.value)
+            // The line above calls the current user input value. 
+        }
+    }
+    
+
 </script>
 
 
