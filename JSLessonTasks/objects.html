@@ -11,6 +11,7 @@ let something = {};
 let person = {
     "name": "Dave",
     "age": 20,
+    "height": 5.8,
     "job": "Bus Driver",
     "gender": "Male",
     "ethnicity": "white",
@@ -23,8 +24,21 @@ let person = {
     "run": function(from, to){
         console.log(`I will run from ${from} to ${to}.`)
     },
+    "skillset": ["programming", "art", "music"],
     "telephone number": "09876526465"
 }
+
+
+
+// for(let key of Object.keys(person)){
+//     console.log(key, typeof person[key])
+//     html += `<option>${key}</option>`
+// }
+
+// let node = document.createElement("select");
+
+
+
 
 // Adding a new person by calling on the structure of an existing object: 
 // let anotherPerson = new person();
@@ -51,9 +65,9 @@ console.log(Object.keys(person))
 
 // One way to list all of the keys within an object
 for(let key of Object.keys(person)){
-    console.log(key, typeof person[key])
-    // html += `<option>${key}</option>`
+    console.log(key, typeof person[key]);
 }
+
 
 // console.log(person);
 console.log(person.name);
