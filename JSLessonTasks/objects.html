@@ -4,6 +4,58 @@
         <title>Objects</title>
 <script>
 
+// Learning how to define objects
+
+let something = {};
+
+let person = {
+    "name": "Dave",
+    "age": 20,
+    "job": "Bus Driver",
+    "gender": "Male",
+    "ethnicity": "white",
+    "register": ["A", "B", "C"], // Array within objects example.
+    "address": {
+        "street": "ABC",
+        "city": "London",
+        "postcode": "XYZ"
+    }
+}
+
+// console.log(person);
+console.log(person.name);
+console.log(person.age);
+console.log(person.job);
+
+console.log(person.register[0]); // Calling an array within an object.
+console.log(person.register.length);
+
+// Adding element programmatically
+person.register.push("E");
+console.log(person.register);
+
+// Removing element programmatically
+removedElement= person.register.pop();
+console.log(removedElement);
+console.log(person.register);
+
+// Adding specific element ?
+newElement = person.register.splice(3, 0, "F", "G");
+// console.log(newElement);
+console.log(person.register);
+
+// Removing specific element ?
+
+
+console.log(person.address); // Calling an object within an object.
+console.log(person.address.street); 
+console.log(person.address.postcode); 
+
+document.write(person.address) // This won't work as we need to call elements of the object specifically.
+
+
+// document.write()
+
 </script>
     </head>
     <body>
