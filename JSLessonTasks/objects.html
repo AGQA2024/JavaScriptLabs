@@ -19,7 +19,40 @@ let person = {
         "street": "ABC",
         "city": "London",
         "postcode": "XYZ"
-    }
+    },
+    "run": function(from, to){
+        console.log(`I will run from ${from} to ${to}.`)
+    },
+    "telephone number": "09876526465"
+}
+
+// Adding a new person by calling on the structure of an existing object: 
+// let anotherPerson = new person();
+// anotherPerson.name = "Amy";
+
+// Calling the function from the console log. 
+console.log(person.run("Manchester", "Preston"))
+
+// Another way to call an element of an object
+console.log(person[`telephone number`]) // Use the slanty quotation marks 
+
+// Another way to call elements from functions using referencing
+let key1 = "job";
+console.log(person[key1])
+
+// Alternatively:
+
+// // Another way to call elements from functions using referencing
+// let key2 = prompt("Enter name, age or job:");
+// console.log("Output:" + person[key2])
+
+// Finding out what keys are active - a way to support agile coding practices. 
+console.log(Object.keys(person))
+
+// One way to list all of the keys within an object
+for(let key of Object.keys(person)){
+    console.log(key, typeof person[key]),
+    // html += `<option>${key}</option>`
 }
 
 // console.log(person);
@@ -52,7 +85,6 @@ console.log(person.address.street);
 console.log(person.address.postcode); 
 
 document.write(person.address) // This won't work as we need to call elements of the object specifically.
-
 
 // document.write()
 
