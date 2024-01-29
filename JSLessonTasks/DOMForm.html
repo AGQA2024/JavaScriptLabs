@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOMFormTask</title>
+    </head>
+    <body>
+
+        <form>
+            <fieldset>
+                <legend>Fieldset Boundary</legend>
+                <h3>Slider Option</h3>
+                <input type="range" name="rangeselect" max="10" min="0" step="0.1" value="7"/>
+                <br>
+    
+                <h3>Checkbox Option</h3>
+                <input type="checkbox" name="checkboxselect" value="Yes">
+                <br>
+    
+                <h3>Radio Option</h3>
+                <input type="radio" id="RB1" name="radioselect1" value="One" required>
+                <label for="RB1">Radio Button 1</label>
+                <br>
+
+                <input type="radio" id="RB2" name="radioselect2" value="Two" required>
+                <label for="RB2">Radio Button 2</label>
+                <br>
+            </fieldset>
+        </form>
+
+        <script>
+
+                // Definition to capture all input types on the form:
+                let nodeList = document.querySelectorAll('[type]');
+                
+                // Basic structure to capture all elements:
+                for(let node of nodeList){
+                    
+                    // console.log(node.getAttribute("type"))
+                    // console.log(node.getAttribute("value"))
+
+                    console.log(`Input= ${node.getAttribute("type")} Value = ${node.getAttribute("value")}`)
+                    
+                }        
+                
+                // Test to call current values:
+                function test(){
+
+                    // Define empty object:
+                    let typeval = {};
+
+                    for(let node of nodeList){
+            
+                        console.log(node.value);
+                        typeval[node.value] = node.value;
+                    }
+                    console.log(typeval)
+
+                    // Display the form as JSON string:
+                    console.log(JSON.stringify(typeval))
+                }
+
+        </script>
+    </body>
+</html>
