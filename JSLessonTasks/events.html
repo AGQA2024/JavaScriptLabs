@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <!-- We can add an event telling the html to wait until the 
+        
+        Note: Use defer in the script element if you are loading in an external file. -->
 <script>
+    document.onload = function(){
+        
+        document.querySelector('button').onclick = function(){
+                alert("567");
+            }
 
+        document.querySelector('input').oninput = function(){
+                console.log('AAAA!')
+            }
+
+        // document.querySelector('input').oninput = function(e){
+        //     console.log('An Event Has Occurred!!!')
+        //     console.log(this.value)
+        //     console.log(e)
+        //     // Bubbles rise?
+        // }
+    }
 </script>
     
     </head>
@@ -11,7 +29,11 @@
     <body>
 
         <!-- Practicing events on webpages: -->
-        <button onclick="alert(123)">Pop!</button>
+        <!-- <button onclick="alert(123)">Pop!</button> -->
+
+        <input oninput="console.log(event)"/>
+
+        <button>Click me!</button>
 
         <p onclick="alert(123)">Click me!</p>
 
@@ -33,5 +55,23 @@
         <p onmouseover="style.fontSize='xx-large'; style.fontStyle='oblique'" onmouseout="style.fontSize='medium'"  >Multiple Event Test?</p>
 
         <!-- Note: This way of writing events straight into the html elements makes it easier to read, but harder to maintain as designers can't easily make changes. Ideally we'd write styling in CSS in such a manner that edits update across all pages (i.e. changing fonts on the nav bar) -->
+
+        <!-- Commented out as it has been moved to the head section to practice onload event: -->
+        <!-- <script>
+            document.querySelector('button').onclick = function(){
+                alert("567");
+            }
+
+            document.querySelector('input').oninput = function(){
+                console.log('AAAA!')
+            }
+
+            document.querySelector('input').oninput = function(e){
+                console.log('An Event Has Occurred!!!')
+                console.log(this.value)
+                console.log(e)
+                // Bubbles rise?
+            }
+        </script> -->
     </body>
 </html>

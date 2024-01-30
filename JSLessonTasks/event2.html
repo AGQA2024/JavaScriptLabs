@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<script>
+
+// Option 1: Calling the head script in a body element
+
+// let init = function(){
+    
+//     document.querySelector('button').addEventListener("click", function(){
+//             alert("567")})
+
+// }
+
+// Option 2: Removing Javascript from the html entirely
+
+let action = function(e){
+    alert("I work for both now!")
+}
+
+window.addEventListener("load", function(){  
+
+    // Works for Button 1:
+    document.querySelector('button').addEventListener("click", function(){alert("123")})
+
+    // Applies the same event to Button 2:
+    document.querySelector('button:nth-child(2)').addEventListener("click", function(){alert("456")})
+    
+    // Alternative option (with action function above) to apply the event listener prompt to both:
+    document.querySelector('button').addEventListener("click", action)
+    document.querySelector('button:nth-child(2)').addEventListener("click", action)
+})
+// Note: We use "window" instead of "document" - why??
+
+
+</script>
+    
+    </head>
+
+    <!-- Option 1: We must call the function from the correct section.
+
+        <body onload="init()">
+
+        <button>Click me!</button>  
+
+        </body> 
+
+    -->
+
+    <body>
+
+        <button>Button 1!</button>
+
+        <!-- Clicking the second button won't apply the first query selector, it seems to only work on the first button. -->
+        <button>Button 2!</button>
+
+    </body>
+
+</html>
