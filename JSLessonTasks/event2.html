@@ -19,7 +19,85 @@ let action = function(e){
     alert("I work for both now!")
 }
 
+// Practicing DataBinding: 
+
+// Defining an empty data array
+let data = {};
+
+// This is our collection of dataBind functionality:
+let dataBind = function(){}; 
+
+// Attaching another function to the one above which adds the input data to the empty array:
+dataBind.set = function(key, value){
+    data[key] = value;
+};
+
+// Using the .get command to retrieve the value associated with a specified key:
+dataBind.get = function(key){
+    return data[key]; // How can it output the value when we call the key?
+};
+
+// dataBind.display = function(){
+//     document.querySelectorAll('[name], [data]')
+// };
+
+dataBind.display = function(){
+    document.querySelectorAll('[name], [data]').forEach(function(item){
+        // console.log(item.value, item.innerText)
+        console.log("CL Item Name - " + item.name)
+
+        // Example of how to handle errors when other elements are found with inputs that are not relevant to our search
+        let key = item.name;
+        if(key == undefined){// Note there are shorter ways to write if commands.
+            key = item.getAttribute("data");
+            console.log("Item doesn't have a name...")
+        } 
+
+        // This line does the same as the one above
+        // let key = item.name || item.getAttribute("data");
+        
+        else{
+            item.value = data[item.name];
+            console.log("Item has a name!" + item.name + item.value)
+        }
+
+        // Commented our as he changed how he was structuring this exercise. 
+        // console.log("ConsoleLog Key Check - " + key)
+
+        // if(item.innerText){
+        //     item.innerText = data[key];
+        // }
+
+        // if(item.value){
+        //     item.value = data[key];
+        // }
+        
+
+    });
+};
+// Functions can be written as ()=>{} rather than function(){}
+
+// let dataBind = function(key,value){
+//     data[key] = value;
+// };
+
 window.addEventListener("load", function(){  
+
+    // Question - How can we apply this to capture the status of the form? Why is this useful?
+
+    document.querySelector('form').addEventListener("input", function(e){
+        console.log(e.target.name)
+        
+        // Commented out as we are creating equivalent functionality in the dataBind function above. 
+        // data[e.target.name] = e.target.value;
+
+        // The following code produces equivalent functionality.
+        dataBind.set(e.target.name, e.target.value);
+        
+        // Code hold:
+        // dataBind.display(); // This would continually update?
+    })
+    // Note: Events are not created by the form, it's created by the child of the form, but it is handled by the parent.
 
     // Works for Button 1:
     document.querySelector('button').addEventListener("click", function(){alert("123")})
@@ -54,6 +132,23 @@ window.addEventListener("load", function(){
 
         <!-- Clicking the second button won't apply the first query selector, it seems to only work on the first button. -->
         <button>Button 2!</button>
+
+        <br>
+        <br>
+
+        <form>
+            <button>Button 3!</button>
+            <button>Button 4!</button>
+            <button>Button 5!</button>
+
+            <!-- Commented out to practice when elements in the array have a name but no value: -->
+            <!-- <input name="telephone"/> -->
+            <input name="address"/>
+            <input name="telephone"/>
+        </form>
+
+        <h1 data="telephone"></h1>
+        <textarea name="telephone" ></textarea>
 
     </body>
 
