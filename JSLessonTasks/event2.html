@@ -103,13 +103,35 @@ dataBind.display = function(){
 //     // document.getElementById('itemList').appendChild(node);
 // };
 
+// let addItem = function(templateName){
+    
+//     // Option 4:
+//     let template = document.querySelector(`[data-template="${templateName}"]`).innerHTML;
+//     let node = document.createElement("div");
+//     node.innerHTML = template;
+//     document.getElementById('itemList').appendChild(node);
+
+//     // To take the text content from an HTML element:
+//     // console.log(document.querySelector('template').content.innerHTML);
+
+// }
+
 let addItem = function(templateName){
     
-    // Option 4:
+    // Option 5:
+
+    // Advatnage that we don't have to 
+    let parentNode = document.getElementById('itemList');
+
     let template = document.querySelector(`[data-template="${templateName}"]`).innerHTML;
+    template= template.replaceAll("{count}", parentNode.children.length)
+
     let node = document.createElement("div");
     node.innerHTML = template;
-    document.getElementById('itemList').appendChild(node);
+
+    // document.getElementById('itemList').appendChild(node);
+
+    parentNode.appendChild(node);
 
     // To take the text content from an HTML element:
     // console.log(document.querySelector('template').content.innerHTML);
@@ -202,7 +224,7 @@ window.addEventListener("load", function(){
         <!-- Add template here which has an image -->
         <template data-template="itemA">
             <!-- Placehold. -->
-            <h2>Flower</h2>
+            <h2 name="flower{count}">Flower</h2>
             <img src="https://www.southernliving.com/thmb/xFlQn020pc1NJAl4ksr7_o_B5u4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-598083938-1-22dab883ff2a43d8b2751d9f363f2d5d.jpg" width="214" height="204">
         </template>
         <template>
