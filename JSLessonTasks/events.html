@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+<script>
+
+</script>
+    
+    </head>
+
+    <body>
+
+        <!-- Practicing events on webpages: -->
+        <button onclick="alert(123)">Pop!</button>
+
+        <p onclick="alert(123)">Click me!</p>
+
+        <p onmouseover="style.color='blue'" onmouseout="style.color='black'">Click me!</p>
+        
+        
+        <!-- Note that the following code will trap you in a loop as onfocus isn't a one off action, so every time you click to end the alert it will refocus and prompt again.
+            <input onfocus="alert(345)"/>  
+        -->
+
+        <!-- Example of how "this" is used to reference a local value within the input element: -->
+        <input onchange="console.log(this.value)"/>
+
+        <input oninput="console.log(this.value)"/>
+
+        <!-- Create example which contains multiple events on the same element -->
+
+        <p onmouseover="style.color='purple'" >Multiple Event Test?</p>
+        <p onmouseover="style.fontSize='xx-large'; style.fontStyle='oblique'" onmouseout="style.fontSize='medium'"  >Multiple Event Test?</p>
+
+        <!-- Note: This way of writing events straight into the html elements makes it easier to read, but harder to maintain as designers can't easily make changes. Ideally we'd write styling in CSS in such a manner that edits update across all pages (i.e. changing fonts on the nav bar) -->
+    </body>
+</html>
