@@ -81,6 +81,41 @@ dataBind.display = function(){
 //     data[key] = value;
 // };
 
+// let addItem = function(){
+    
+//     // // Option 1:
+//     // document.getElementById('itemList').innerHTML += 
+//     // // innerHTML will make the entire webpage rebuild.
+//     // `<div>
+//     //     <span>Item</span> - <span>Item</span>
+//     // </div>`;
+//     // // This is not the most pretty way of doing this - worry about output first rather than the efficency of the code.
+
+//     // // Option 2:
+//     // let node = document.createElement("div");
+//     // node.innerHTML = `<span>Item</span> - <span>Item</span>`;
+//     // document.getElementById('itemList').appendChild(node);
+//     // // Add scroll function on the container so that the AddItem button doesn't scroll off the page. 
+
+//     // // Option 3:
+//     // let node = document.createElement("div");
+//     // node.innerHTML = `<span>Item</span> - <span>Item</span>`;
+//     // document.getElementById('itemList').appendChild(node);
+// };
+
+let addItem = function(templateName){
+    
+    // Option 4:
+    let template = document.querySelector(`[data-template="${templateName}"]`).innerHTML;
+    let node = document.createElement("div");
+    node.innerHTML = template;
+    document.getElementById('itemList').appendChild(node);
+
+    // To take the text content from an HTML element:
+    // console.log(document.querySelector('template').content.innerHTML);
+
+}
+
 window.addEventListener("load", function(){  
 
     // Question - How can we apply this to capture the status of the form? Why is this useful?
@@ -145,11 +180,40 @@ window.addEventListener("load", function(){
             <!-- <input name="telephone"/> -->
             <input name="address"/>
             <input name="telephone"/>
+
+            <!-- Trying out how to add items into the form: -->
+            <br>
+            <br>
+            <div id="itemList">
+
+            </div>
+
+            <input type="button" value="AddItem" onclick="addItem()"/> 
+
+            <input type="button" value="AddItemImg" onclick="addItem('itemA')"/> 
+
+            <!-- We can make the code more abstract rather than writing it straight into the file -->
+
         </form>
 
         <h1 data="telephone"></h1>
         <textarea name="telephone" ></textarea>
 
+        <!-- Add template here which has an image -->
+        <template data-template="itemA">
+            <!-- Placehold. -->
+            <h2>Flower</h2>
+            <img src="https://www.southernliving.com/thmb/xFlQn020pc1NJAl4ksr7_o_B5u4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-598083938-1-22dab883ff2a43d8b2751d9f363f2d5d.jpg" width="214" height="204">
+        </template>
+        <template>
+            <h2>Flower</h2>
+            <img src="img_white_flower.jpg" width="214" height="204">
+
+            <!-- Add in elements with name='telephone' and check that it updates everywhere -->
+          </template>
+          <!-- Designers can now modify the template of an element on a page rather than having to write the code themselves? -->
+
+        <!-- Call the information from it and display it somewhere else on the page -->
     </body>
 
 </html>

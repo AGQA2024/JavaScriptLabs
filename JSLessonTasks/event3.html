@@ -4,17 +4,6 @@
 
 <script>
 
-// Option 1: Calling the head script in a body element
-
-// let init = function(){
-    
-//     document.querySelector('button').addEventListener("click", function(){
-//             alert("567")})
-
-// }
-
-// Option 2: Removing Javascript from the html entirely
-
 let action = function(e){
     alert("I work for both now!")
 }
@@ -62,6 +51,8 @@ dataBind.display = function(){
 
 window.addEventListener("load", function(){  
 
+    // Recording the input values:
+
     document.querySelector('form').addEventListener("input", function(e){
         // console.log(e.target.name)
 
@@ -71,28 +62,44 @@ window.addEventListener("load", function(){
     })
  
 
-    // Works for Button 1:
+    // For submit button:
+
     document.querySelector('button').addEventListener("click", function(){
             alert("You have now submitted the form:");
 
             dataBind.display();
 
-            // // Want to write a ForEach loop to clear the input text fields....
+            // Want to write a ForEach loop to clear the input text fields....
 
-            // document.querySelectorAll('[name], [data]').forEach(function(item){
+            document.querySelectorAll('[name], [data]').forEach(function(item){
 
-            // let key = item.name;
-            // if(key == undefined){
-            //     key = item.getAttribute("data");
-            //     console.log("A")
-            // } 
+            let key = item.name;
+
+            // Input elements will always have a name so this section helps us find the input elements to clear:
+            if(key == undefined){ 
+                key = item.getAttribute("data");
+
+                // if(data[key] !== undefined){
+                //     item.innerText = data[key];
+                //     console.log(item.innerText);
+                // }
+                // console.log("A")
+
+                console.log("Undefined")
+            } 
             
-            // else{
-            //     item.value = data[item.name];
-            //     console.log("B")
-            // }
+            else{
+                item.value = data[item.name];
+                // item.value = "";
+                // console.log(item.value)
+            }
 
-            // });
+            item.value = "";
+
+            });
+            
+            // dataBind.display();
+
     })
 
 })
@@ -111,7 +118,6 @@ window.addEventListener("load", function(){
             <input name="address"/>
             <p>Please input your telephone number:</p>
             <input name="telephone"/>
-
            
         </form>
 
@@ -121,7 +127,7 @@ window.addEventListener("load", function(){
         <textarea name="address"></textarea>
         <h3></h3>
 
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </body>
 
 </html>
