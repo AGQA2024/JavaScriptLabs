@@ -9,14 +9,15 @@ let dataBind = function(){
 }
 dataBind.get = function(key){
 
-    // console.log(key)
-    // //Adding getters to the dataBind.display function means that we can add parsing functionality:
+    // Adding getters to the dataBind.display function means that we can add parsing functionality:
     let field = data;
     key.split(".").forEach(function(item){
-        // console.log(field) 
+    
         field=field[item]});
-        
+
     return field;
+
+    // The code above means that we can get the secondary object out of the dataset, however it means the code is more complicated, less maintainable and will have a performance drop (which we won't notice at this stage).
 
     // return data[key];
 }
