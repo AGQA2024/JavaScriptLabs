@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script src="databind.js" defer></script>
+
+<script>
+
+let data = {
+    "telephone": "123",
+    "address": "hasdsadadsome"
+
+};
+
+// dataBind code copied over to databind.js
+
+let addItem = function(templateName, targetSelector){
+    
+    let parentNode = document.querySelector(targetSelector);
+    // targetSelector will be in a string form
+
+    let template = document.querySelector(`[data-template="${templateName}"]`).innerHTML;
+    template= template.replaceAll("{count}", parentNode.children.length)
+
+    let node = document.createElement("div");
+    node.innerHTML = template;
+
+    parentNode.appendChild(node);
+
+    // To take the text content from an HTML element:
+    // console.log(document.querySelector('template').content.innerHTML);
+
+}
+
+// Commented out as it is now redundant:
+// window.addEventListener("load", function(){})
+
+
+</script>
+    
+    </head>
+
+
+    <body>
+
+        <!-- BRYANY ADDED BELOW -->
+
+        <input type="button" value="AddItemImg" onclick="addItem('itemB', '#anotheritemList')"/> 
+
+        <div id="anotheritemList"></div>
+
+        <br>
+        <br>
+
+        <form>
+
+            <input name="address"/>
+            <input name="telephone"/>
+
+            <!-- Trying out how to add items into the form: -->
+            <br>
+            <br>
+
+            <div id="itemList">
+
+            </div>
+
+            <input type="button" value="AddItemImg" onclick="addItem('itemA', '#itemList')"/> 
+
+            <!-- 'itemA' is the thing that we want to put in, '#itemList' is where we want to call it from -->
+
+        </form>
+
+        <h1 data="telephone"></h1>
+        <textarea name="telephone" ></textarea>
+
+        <template data-template="itemA">
+
+            <h2 name="flower{count}">Flower</h2>
+            <img src="https://www.southernliving.com/thmb/xFlQn020pc1NJAl4ksr7_o_B5u4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-598083938-1-22dab883ff2a43d8b2751d9f363f2d5d.jpg" width="214" height="204">
+        </template>
+
+        <template>
+            <h2>Flower</h2>
+            <img src="img_white_flower.jpg" width="214" height="204">
+
+          </template>
+
+        <!-- BRYANY ADDED BELOW -->
+
+        <template data-template="itemB">
+            <span>*****</span>
+            <span>-</span>
+            <span><textarea name="telephone{count}"></textarea></span>
+        </template>
+
+    </body>
+
+</html>
