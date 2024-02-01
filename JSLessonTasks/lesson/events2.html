@@ -1,16 +1,44 @@
 <!DOCTYPE html>
+<!-- From this alone we know that the databinding is working appropriately -->
 <html>
     <head>
 
         <script src="databind.js" defer></script>
 <script>
-let data = {
-    "telephone": "123456",
-    "address": "abc"
-}
+
+// let data = {
+//     "telephone": "123456",
+//     "address": "abc"
+// } 
+
+
+let data = JSON.parse( sessionStorage.getItem("data") );
+
+// Currently written in this way, the file is fetched after the webpage has loaded
+// We'll need to add in extra code in order for this to be updated and presented through our dataBind functionality.
+fetch('https://dummyjson.com/users/1')
+    .then(result => result.json()) //This line tells us what to do with the result
+    // .then(function(result){return result.json()})
+    .then(function(details){
+        console.log(details);
+        // console.log(Object.keys(details))
+        console.log(details.address.address)
+        data=details; 
+        dataBind.display()});
+
+    // .then(details => console.log(details), data=details, dataBind.display()); 
+    // This line is about how we want to present the results
+
+    // for(let key of Object.keys(person)){
+    // console.log(key, typeof person[key]);}
+
+    console.log(data);
+    
+    
 </script>
 
     </head>
+
 <script>
 
 </script>
@@ -19,11 +47,19 @@ let data = {
     <body>
         
         <h1>Display Data</h1>
-        <p>Telephone: <span data="telephone"></span></p>
+        <!-- <p>Telephone: <span data="telephone"></span></p>
+        <p>Address: <span data="address"></span></p> -->
+
+        <p>Age: <span data="age"></span></p>
+        <p>Forename: <span data="firstName"></span></p>
+        <p>Eye Colour: <span data="eyeColor"></span></p>
+
+        <!-- You need to need to know how to go in and check for each item -->
         <p>Address: <span data="address"></span></p>
 
     </body>
 </html>
+
 
 
 

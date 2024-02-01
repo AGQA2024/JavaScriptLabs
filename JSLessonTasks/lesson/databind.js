@@ -1,6 +1,6 @@
 if(data == undefined){
     data = {};
-}
+} 
 
 
 let dataBind = function(){
@@ -27,7 +27,7 @@ dataBind.display = function(){
                 item.value = data[key];
             }
         }
-    });
+    }); 
 }
 
 
@@ -37,7 +37,7 @@ dataBind.save = function(){
 }
 
 
-
+//This is the important bit we want to overwrite with our new fetched data:
 dataBind.display();
 
 document.addEventListener("input", function(e){

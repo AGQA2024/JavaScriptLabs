@@ -15,20 +15,37 @@ dataBind.set = function(key, value){
     data[key] = value;
 };
 
+// dataBind.display = function(){
+//     document.querySelectorAll('[name], [data]').forEach(function(item){
+
+//         let key = item.name;
+//         if(key == undefined){
+//             key = item.getAttribute("data");
+//         } 
+        
+//         else{
+//             item.value = data[item.name];
+//         }
+     
+//     });
+// }; 
+
 dataBind.display = function(){
     document.querySelectorAll('[name], [data]').forEach(function(item){
-
-        let key = item.name;
-        if(key == undefined){
-            key = item.getAttribute("data");
-        } 
-        
-        else{
-            item.value = data[item.name];
+        if(item.name == undefined){
+            let key = item.getAttribute("data");
+            if(data[key] !== undefined){
+                item.innerText = data[key];
+            }
         }
-     
-    });
-};
+        else{
+            let key = item.name;
+            if(data[key] !== undefined){
+                item.value = data[key];
+            }
+        }
+    }); 
+}
 
 dataBind.save = function(){
     console.log(JSON.stringify(data));

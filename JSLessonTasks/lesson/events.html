@@ -7,7 +7,7 @@
 let action = function(e){
     alert(789)
     console.log(e)
-}
+} 
 
 
 let data = {
@@ -27,9 +27,6 @@ let addItem = function(templateName, targetSelector){
 }
 
 
-
-
-
 </script>
 
     </head>
@@ -39,6 +36,15 @@ let addItem = function(templateName, targetSelector){
 
     </head>
     <body>
+
+        <nav>
+            <h1><a href="events2.html">Events2 Page</a></h1>
+        </nav>
+
+        <!-- <input type="button" value="Save" onlick="dataBind.save()"/> -->
+
+        <input type="button" value="Save" onclick="dataBind.save()"/>
+
         <input type="button" value="Add Item" 
         onclick="addItem('itemB','#anotherItemList')"
     />
