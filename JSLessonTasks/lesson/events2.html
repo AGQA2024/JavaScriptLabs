@@ -31,9 +31,15 @@ fetch('https://dummyjson.com/users/1')
 
     // for(let key of Object.keys(person)){
     // console.log(key, typeof person[key]);}
-
-    console.log(data);
     
+    // The following code lets you call out specific elements such as the value of city is Washington for this dataset (when run from the command line):
+
+    // let field = data;
+    // "address.city".split(".").forEach(function(item){
+    // console.log(field) 
+    // field=field[item]});
+
+    // Note: console.log(field) shows us that these lines of code are executing a recursion process
     
 </script>
 
@@ -50,12 +56,19 @@ fetch('https://dummyjson.com/users/1')
         <!-- <p>Telephone: <span data="telephone"></span></p>
         <p>Address: <span data="address"></span></p> -->
 
+        <!-- console.log(data); -->
+        <!-- Note that the data in the console webpage log is not the same as what displays from this command. -->
+
         <p>Age: <span data="age"></span></p>
         <p>Forename: <span data="firstName"></span></p>
         <p>Eye Colour: <span data="eyeColor"></span></p>
 
         <!-- You need to need to know how to go in and check for each item -->
-        <p>Address: <span data="address"></span></p>
+        <p>Address: <span data="address.city"></span></p>
+
+        <p>Coordinates Lattitude: <span data="address.coordinates.lat"></span></p>
+
+        <p>Company Lattitude: <span data="company.address.coordinates.lat"></span></p>
 
     </body>
 </html>
