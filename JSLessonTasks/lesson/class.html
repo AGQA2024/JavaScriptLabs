@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+
+       
+<script>
+
+class Phone{ 
+    // Convention is to declare classes with a capital letter.
+    // Still be careful with naming an instance of "phone" with a lower case later on, it could still catch you out. 
+    speaker = "ZZZZ";
+    microphone = "AAAAA";
+    number = "BBBBB";
+
+    // constructor(telNumber ="123"){
+    //     console.log("I am a phone that was created")
+    //     this.number = telNumber;
+    //     // this is required in JS as otherwise it looks for a definition externally.
+    // }
+
+    constructor(config={}){
+        if(config.telNumber == undefined){
+            alert("You need to provide a telephone number")
+        }
+        // //There are shorthand ways of writing checks - this is a seperate skill i.e.:
+        // !config.telNumber ? alert("Number Missing!"): '';
+
+        console.log("I am a phone that was created")
+        this.number = config.telNumber;
+        // this is required in JS as otherwise it looks for a definition externally.
+    }
+
+    call(telNumber){
+        alert("ring ring! " + telNumber + " : " + this.number);
+    };
+};
+
+// Creating a new phone based on the specifications of the class defined above.
+// Line below is for when not using config
+// let myPhone = new Phone();
+let myPhone = new Phone({telNumber:"32984732848"});
+
+console.log(myPhone);
+console.log(myPhone.number);
+
+// Using the class to create a new object with the same specifications but a different number
+let yourPhone = new Phone({telNumber:"556293472"});
+
+console.log(yourPhone);
+yourPhone.number="CCCCCCCC"
+console.log("This is now the new number: " + yourPhone.number);
+// console.log("The original number defined in the class is still the same: " + myPhone.number);
+
+myPhone.call("999");
+yourPhone.call("999");
+
+</script>
+
+    </body>
+</html>
