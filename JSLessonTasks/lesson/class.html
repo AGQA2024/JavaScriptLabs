@@ -39,6 +39,14 @@ class Phone{
     };
 };
 
+// Look up what "spaghetti code" is :o
+//Advice: Don't have more than two levels of extension. It risks you having to backtrack later. 
+class SmartPhone extends Phone{
+    display = "big";
+
+    // Note you can call stuff from the parent class if we needed to.
+};
+
 // Creating a new phone based on the specifications of the class defined above.
 // Line below is for when not using config
 // let myPhone = new Phone();
@@ -48,15 +56,15 @@ console.log(myPhone);
 console.log(myPhone.number);
 
 // Using the class to create a new object with the same specifications but a different number
-let yourPhone = new Phone({telNumber:"556293472"});
+let yourPhone = new SmartPhone({telNumber:"556293472"});
 
 console.log(yourPhone);
 yourPhone.number="CCCCCCCC"
 console.log("This is now the new number: " + yourPhone.number);
 // console.log("The original number defined in the class is still the same: " + myPhone.number);
 
-myPhone.call("999");
-yourPhone.call("999");
+// myPhone.call("999");
+// yourPhone.call("999");
 
 </script>
 
