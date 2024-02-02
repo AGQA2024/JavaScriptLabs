@@ -1,0 +1,11 @@
+cd *into directory*
+
+npm install -g create-react-app
+
+npx create-react-app *nameofproject*
+
+cd *into project* 
+
+npm start 
+
+
