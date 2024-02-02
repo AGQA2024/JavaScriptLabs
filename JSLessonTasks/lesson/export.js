@@ -22,4 +22,4 @@ let object = {
 object.more = 123; 
 
 // Simpliest way to export:
-export default object ;
+export default object ; 
