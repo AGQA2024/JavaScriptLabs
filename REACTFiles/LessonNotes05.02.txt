@@ -1,0 +1,130 @@
+['a', 'b', 'c'].forEach(function(item){
+	console.log(item);
+});
+
+['a', 'b', 'c'].map(function(item){
+	console.log(item);
+	return item;
+});
+
+
+['a', 'b', 'c'].map(function(item){
+	return `<p>${item}</p>`;
+	return `<p>${item}</p>`;
+});
+
+
+
+[{title:"Power Rangers", type: "cartoon", ageRange: 10},
+{title:"South Park", type: "cartoon", ageRange: 50},
+{title:"Thunder Cats", type: "cartoon", ageRange: 5}]
+
+.map(function(item){
+	return `<p title="${item.title}">${item.title} ${item.type} ${item.ageRange}</p>`;
+});
+
+// Holding intermediate code:
+
+[{title:"Power Rangers", type: "cartoon", ageRange: 10},
+{title:"South Park", type: "cartoon", ageRange: 50},
+{title:"Thunder Cats", type: "cartoon", ageRange: 5}]
+
+.reduce(function(total, item){
+	//total is the parameter which holds the item before.
+
+	return `<p title="${item.title}">${item.title} ${item.type} ${item.ageRange}</p>`;
+// return will just output the last item
+	
+	return total + `<p title="${item.title}">${item.title} ${item.type} ${item.ageRange}</p>`; 
+
+// Only the first return will be output. 
+
+}, "start value");
+
+
+
+[{title:"Power Rangers", type: "cartoon", ageRange: 10},
+{title:"South Park", type: "cartoon", ageRange: 50},
+{title:"Thunder Cats", type: "cartoon", ageRange: 5}]
+
+.reduce(function(total, item){
+
+	return total + `<p title="${item.title}">${item.title} ${item.type} ${item.ageRange}</p>`; 
+
+}, "start value");
+
+
+// Example of calculation:
+
+[1,2,3,4]
+
+.reduce(function(total, item){
+
+	return total + item; 
+
+}, 0); // Starting value of zero. If you had an empty string it would return the output as a concatinated string.
+
+// Example of calculation with condition - this could be used to filter out data. 
+
+[1,2,3,4]
+
+.reduce(function(total, item){
+	
+	return item < 3 ? total + item: total; 
+
+}, 10);
+
+// Example of assigning in React
+
+[a, b] = [10, 20]; // You can then reference variables directly - links to getters and setters. 
+
+[a, , c] = [10,70,30]; // If we want to assign the first an last items then we can add a blank space and another comma
+
+
+let example = function(){
+	return [100, 200, 300]};
+
+let [a, b, c] = example();
+
+
+// Example Combining Objects
+
+a = {x:10, y:10, z:10};
+
+b = {a:10, b:10, c:10};
+
+c = {...a, ...b}; // The three dots are the "spread operator"
+
+e = {...b, d:10} // We get all of b with the additional element d.
+
+Object.keys(c); //Gives us the keys of the object.
+Object.entries(c); // This gives you a key-value pair array. 
+
+Object.entries(c).map(item=>item[1]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
