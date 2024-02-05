@@ -23,7 +23,7 @@ function name(props){
     <td>Name:</td>
     <td>{props.name}</td>
     </tr> 
-};
+}; 
 
 function age(props){
     return <tr>

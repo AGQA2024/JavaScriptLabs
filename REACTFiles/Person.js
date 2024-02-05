@@ -33,7 +33,7 @@ export default function(props){
                 <tr>
                 <td>Telephone:</td>
                 <td>{props.telephone}</td>
-                </tr>
+                </tr> 
             </tbody>
         
         </table>
